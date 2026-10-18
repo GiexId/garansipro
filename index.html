@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101828">
+  <meta name="description" content="GaransiPro membantu bisnis mengelola garansi produk secara digital, mudah, dan profesional.">
+  <title>GaransiPro — Manajemen Garansi Digital</title>
+  <style>
+    :root {
+      --navy: #101828;
+      --blue: #315efb;
+      --muted: #667085;
+      --bg: #f6f8fc;
+      --border: #e5eaf2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: white;
+      color: var(--navy);
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1100px, 90%); margin: auto; }
+    header {
+      border-bottom: 1px solid var(--border);
+      background: white;
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { font-size: 23px; font-weight: 800; letter-spacing: -1px; }
+    .brand span { color: var(--blue); }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--blue);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .button.secondary {
+      background: white;
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+    .hero {
+      padding: 78px 0 70px;
+      background: linear-gradient(135deg, #f6f8ff, #fff 65%);
+    }
+    .tag {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #e9efff;
+      color: #3152c8;
+      border-radius: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 22px 0;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -2.5px;
+    }
+    h1 span { color: var(--blue); }
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .trust { margin-top: 24px; color: var(--muted); font-size: 13px; }
+    .preview-wrap { padding: 0 0 65px; background: var(--bg); }
+    .preview {
+      position: relative;
+      top: -24px;
+      margin-bottom: -24px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 18px 50px #1018280c;
+    }
+    .preview-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .status {
+      padding: 7px 10px;
+      background: #e8f8ee;
+      color: #167647;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding-top: 20px;
+    }
+    .stat {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .stat small { color: var(--muted); }
+    .stat strong { display: block; font-size: 27px; margin-top: 12px; }
+    section.features { padding: 75px 0; }
+    .section-title { text-align: center; font-size: 34px; letter-spacing: -1px; }
+    .section-desc {
+      max-width: 570px;
+      margin: 12px auto 35px;
+      text-align: center;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .feature {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      background: #edf1ff;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+    .feature h3 { margin: 20px 0 10px; }
+    .feature p { color: var(--muted); line-height: 1.7; font-size: 14px; }
+    .cta {
+      padding: 55px 25px;
+      margin: 0 auto 70px;
+      border-radius: 20px;
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+    .cta p { color: #cbd5e1; line-height: 1.7; }
+    footer { border-top: 1px solid var(--border); padding: 25px 0; color: var(--muted); font-size: 13px; }
+    footer .container { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 650px) {
+      nav { min-height: 68px; }
+      .nav-links a:not(.button) { display: none; }
+      .brand { font-size: 21px; }
+      .hero { padding: 55px 0; }
+      h1 { letter-spacing: -1.5px; }
+      .stats, .features-grid { grid-template-columns: 1fr; }
+      .preview { padding: 17px; }
+      .stat { padding: 16px; }
+      .section-title { font-size: 29px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a href="#" class="brand">Garansi<span>Pro</span></a>
+      <div class="nav-links">
+        <a href="#fitur">Fitur</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#mulai" class="button">Mulai Gratis</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="tag">✦ Solusi Garansi Digital untuk Bisnis</span>
+        <h1>Kelola garansi lebih mudah, bisnis makin <span>profesional.</span></h1>
+        <p>
+          Simpan data garansi produk, pantau masa berlaku, dan layani
+          pelanggan dalam satu platform digital yang praktis.
+        </p>
+        <div class="actions">
+          <a class="button" href="#mulai">Jelajahi GaransiPro →</a>
+          <a class="button secondary" href="#fitur">Lihat Fitur</a>
+        </div>
+        <div class="trust">✓ Praktis &nbsp; ✓ Data terorganisir &nbsp; ✓ Siap berkembang</div>
+      </div>
+    </section>
+
+    <section class="preview-wrap" id="tentang">
+      <div class="container">
+        <div class="preview">
+          <div class="preview-head">
+            <div>
+              <strong>Ringkasan Garansi</strong><br>
+              <small style="color:#667085">Contoh tampilan dashboard</small>
+            </div>
+            <span class="status">● Konsep Dashboard</span>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <small>Total Garansi</small>
+              <strong>128</strong>
+            </div>
+            <div class="stat">
+              <small>Masih Aktif</small>
+              <strong>96</strong>
+            </div>
+            <div class="stat">
+              <small>Segera Berakhir</small>
+              <strong>12</strong>
+            </div>
+          </div>
+          <p style="color:#667085;font-size:12px;margin-bottom:0">
+            Angka di atas hanya data contoh desain, belum berasal dari database.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="fitur">
+      <div class="container">
+        <h2 class="section-title">Semua garansi, satu tempat.</h2>
+        <p class="section-desc">
+          Dirancang untuk toko, teknisi, dan usaha jasa yang ingin
+          mengelola garansi dengan lebih rapi.
+        </p>
+        <div class="features-grid">
+          <article class="feature">
+            <div class="feature-icon">🛡️</div>
+            <h3>Garansi Digital</h3>
+            <p>Catat produk, nomor seri, tanggal pembelian, dan masa berlaku garansi.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🔎</div>
+            <h3>Pencarian Cepat</h3>
+            <p>Temukan data garansi pelanggan dengan lebih mudah dan terstruktur.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">🔔</div>
+            <h3>Pengingat Garansi</h3>
+            <p>Siapkan alur pengingat untuk membantu bisnis memantau garansi yang akan berakhir.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="mulai">
+      <div class="cta">
+        <h2>Siap mengelola garansi dengan lebih baik?</h2>
+        <p>GaransiPro sedang dibangun. Fitur akun dan penyimpanan data akan ditambahkan berikutnya.</p>
+        <a href="#fitur" class="button" style="background:white;color:#101828">Kenali Fitur Kami</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>GaransiPro</strong>
+      <span>© <span id="year"></span> GaransiPro. Dibuat untuk bisnis Indonesia.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
